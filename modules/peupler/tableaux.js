@@ -46,7 +46,7 @@ let nom = [
 				"Bélanger",
 				"Lévesque",
 				"Bergeron",
-				"Jonathan",
+				"McDuff",
 				"Paquette",
 				"Girard",
 				"Simard",
