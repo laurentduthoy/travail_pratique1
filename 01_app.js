@@ -38,36 +38,36 @@ app.get('/list', function (req, res) {
 
 // ====================== POUR AJOUTER
 app.post('/ajouter', (req, res) => {
-console.log('req.body' + req.body)
- if (req.body['_id'] != '')
- { 
- console.log('sauvegarde') 
- var oModif = {
- "_id": ObjectID(req.body['_id']), 
- nom: req.body.nom,
- prenom:req.body.prenom, 
- telephone:req.body.telephone,
-courriel:req.body.courriel
- }
- var util = require("util");
- console.log('util = ' + util.inspect(oModif));
- }
- else
- {
- console.log('insert')
- console.log(req.body)
- var oModif = {
- nom: req.body.nom,
- prenom:req.body.prenom, 
- telephone:req.body.telephone,
-courriel:req.body.courriel
- }
- }
- db.collection('adresse').save(oModif, (err, result) => {
- if (err) return console.log(err)
- console.log('sauvegarder dans la BD')
- res.redirect('/list')
- })
+	console.log('req.body' + req.body)
+	 if (req.body['_id'] != '')
+	 { 
+		console.log('sauvegarde') 
+		let oModif = {
+			"_id": ObjectID(req.body['_id']), 
+			nom: req.body.nom,
+			prenom:req.body.prenom, 
+			telephone:req.body.telephone,
+			courriel:req.body.courriel
+	 	}
+	 let util = require("util");
+
+	 }
+	 else
+	 {
+	 console.log('insert')
+	 console.log(req.body)
+	 let oModif = {
+	 nom: req.body.nom,
+	 prenom:req.body.prenom, 
+	 telephone:req.body.telephone,
+	courriel:req.body.courriel
+	 }
+	 }
+	 db.collection('adresse').save(oModif, (err, result) => {
+	 if (err) return console.log(err)
+	 console.log('sauvegarder dans la BD')
+	 res.redirect('/list')
+	 })
 })
 
 // =========== POUR DETRUIRE
@@ -81,20 +81,18 @@ app.get('/detruire/:id', (req, res) => {
  	})
 })
 
-
 // =============== POUR TRIER
 app.get('/trier/:cle/:ordre', (req, res) => {
-let cle = req.params.cle
-let ordre = (req.params.ordre == 'asc' ? 1 : -1)
-let cursor = db.collection('adresse').find().sort(cle,ordre).toArray(function(err, resultat){
-ordre == 1 ? 'asc' : 'desc';
+	let cle = req.params.cle
+	let ordre = (req.params.ordre == 'asc' ? 1 : -1)
+	let cursor = db.collection('adresse').find().sort(cle,ordre).toArray(function(err, resultat){
+	ordre == 1 ? 'asc' : 'desc';
 
-//console.log(req.params.ordre);
-ordre = (req.params.ordre == 'asc' ? 'desc' : 'asc')
- res.render('components/adresse.ejs', {adresses: resultat, cle, ordre })
+	//console.log(req.params.ordre);
+	ordre = (req.params.ordre == 'asc' ? 'desc' : 'asc')
+	 res.render('components/adresse.ejs', {adresses: resultat, cle, ordre })
+	})
 })
-})
-
 
 // ============ PEUPLER
 app.get('/peupler', (req, res) => {
@@ -135,9 +133,16 @@ app.post('/recherche', (req, res) => {
 })
 
 // ================= afficher un utilisateur
-app.get('/afficherUtilisateur', (req, res) => {
-	db.collection('adresse').remove({}, (err, resultat) => {
-		if (err) return console.log(err)
-		res.redirect('/list')  // redirige vers la route qui affiche la collection
-	})
+app.get('/afficherUtilisateur/:id', (req, res) => {
+	let id = req.params.id 
+	let critere = ObjectID(req.params.id)
+
+ db.collection('adresse').findOne({"_id": critere}, (err, resultat) => {
+
+ 	console.log(resultat);
+
+	if (err) return console.log(err)
+ 		res.redirect('/list')
+ 	})
+	res.render('components/profilpage.ejs', {adresses: oPersonne})
 })
