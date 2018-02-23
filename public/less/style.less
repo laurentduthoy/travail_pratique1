@@ -3,22 +3,25 @@
 @couleurPale : lighten(@couleurPrincipal, 20%);
 @couleurSecondaire : #0d47a1;
 
-header{
-	display: flex;
-	flex-direction:column;
-	justify-content:center;
-	align-items:center;
-	width: 100vw;
-	height: 20vh;
-	background-color: @couleurPrincipal;
-	border-top: 1em solid @couleurFoncer;
+
+body{
+	font-family: 'Roboto', sans-serif;
+
+	header{
+		display: flex;
+		flex-direction:column;
+		justify-content:center;
+		align-items:center;
+		width: 100vw;
+		height: 20vh;
+		background-color: @couleurPrincipal;
+		border-top: 1em solid @couleurFoncer;
 
 	nav{
 		a{
 			color:white;
 			text-decoration: none;
 			padding-left: 1em;
-			font-family: 'Roboto', sans-serif;
 		}
 	}
 
@@ -38,41 +41,67 @@ header{
 	}
 }
 
-.mon_formulaire {
-	background-color: @couleurPale;
-	display: flex;
-	flex-direction:column;
+	.mon_formulaire {
+		background-color: @couleurPale;
+		display: flex;
+		flex-direction:column;
 
-	input{
-		
-		height: 2em;
+		input{
+			
+			height: 2em;
 
-		&:last-child{
-			height: 3em;
-			border: none; 
-			color:white;
-			font-weight: bold;
-			text-transform: uppercase;
-			background-color: @couleurSecondaire;
+			&:last-child{
+				height: 3em;
+				border: none; 
+				color:white;
+				font-weight: bold;
+				text-transform: uppercase;
+				background-color: @couleurSecondaire;
+			}
 		}
 	}
-}
-
-.formulaire_recherche{
-	display: flex;
-	border-top: 2px solid black; 
-	input{
-		width: 60%;
+	
+	.formulaire_recherche{
+		display: flex;
+		border-top: 2px solid @couleurFoncer;
+		border-bottom: 2px solid @couleurFoncer;
 		height: 2em;
 
-		&:last-child{
-			border: none;
-			height: 2.4em;
-			width: 40%;
-			color:white;
-			font-weight: bold;
-			text-transform: uppercase;
-			background-color: @couleurSecondaire;
+		input{
+			width: 60%;
+
+			&:last-child{
+				width: 40%;
+				color:white;
+				border: none;
+				font-weight: bold;
+				text-transform: uppercase;
+				background-color: @couleurSecondaire;
+			}
 		}
 	}
+
+	table{
+		tbody{
+			tr{
+				&:first-child{
+					color:white;
+					background-color: @couleurFoncer;
+					th{
+						a{
+							color: white;
+							text-decoration: none;
+						}
+					}
+				}
+
+				td,th{	
+					&:first-child{
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
 }
