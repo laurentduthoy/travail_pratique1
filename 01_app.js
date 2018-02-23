@@ -125,10 +125,19 @@ app.post('/recherche', (req, res) => {
   			{'prenom' : { '$regex' : req.body.elemRecherche, '$options' : 'i' }}, 
   			{'nom' : { '$regex' : req.body.elemRecherche, '$options' : 'i' }},
   			{'courriel' : { '$regex' : req.body.elemRecherche, '$options' : 'i' }},
-  			{'telephone' : { '$regex' : req.body.elemRecherche, '$options' : 'i' }},
+  			{'telephone' : { '$regex' : (req.body.elemRecherche).replace(/[^0-9]/g, ''), '$options' : 'i' }},
+
   		]}).toArray(function(err, resultat) {
    		 if (err) throw err;
     		console.log(resultat);
     	 res.render('components/adresse.ejs', {adresses: resultat})
   });
+})
+
+// ================= afficher un utilisateur
+app.get('/afficherUtilisateur', (req, res) => {
+	db.collection('adresse').remove({}, (err, resultat) => {
+		if (err) return console.log(err)
+		res.redirect('/list')  // redirige vers la route qui affiche la collection
+	})
 })
