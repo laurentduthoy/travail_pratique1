@@ -37,3 +37,23 @@ header{
 		}
 	}
 }
+
+.mon_formulaire {
+	background-color: @couleurPale;
+	display: flex;
+	flex-direction:column;
+
+	input{
+		
+		height: 2em;
+
+		&:last-child{
+			height: 3em;
+			border: none; 
+			color:white;
+			font-weight: bold;
+			text-transform: uppercase;
+			background-color: @couleurSecondaire;
+		}
+	}
+}
