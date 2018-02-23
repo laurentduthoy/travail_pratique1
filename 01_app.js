@@ -146,4 +146,5 @@ app.get('/afficherUtilisateur/:id', (req, res) => {
  		//res.redirect('/list')
  	})
 	//res.render('components/profilpage.ejs', {adresses: resultat})
+	
 })
