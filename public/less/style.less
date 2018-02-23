@@ -82,11 +82,14 @@ body{
 	}
 
 	table{
+		overflow-x: scroll;
 		tbody{
+			
 			tr{
 				&:first-child{
 					color:white;
 					background-color: @couleurFoncer;
+
 					th{
 						a{
 							color: white;
@@ -95,8 +98,16 @@ body{
 					}
 				}
 
+				&:nth-child(even){
+					background-color: @couleurPale;
+				}
+				
+				td{
+					padding: 0.5em;
+				}
+
 				td,th{	
-					&:first-child{
+					&:first-child,&:nth-child(4),&:nth-child(7){
 						display: none;
 					}
 				}
