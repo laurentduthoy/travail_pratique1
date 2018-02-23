@@ -140,9 +140,10 @@ app.get('/afficherUtilisateur/:id', (req, res) => {
  db.collection('adresse').findOne({"_id": critere}, (err, resultat) => {
 
  	console.log(resultat);
-
+ 	res.render('components/profilpage.ejs', {personne: resultat})
+	
 	if (err) return console.log(err)
- 		res.redirect('/list')
+ 		//res.redirect('/list')
  	})
-	res.render('components/profilpage.ejs', {adresses: oPersonne})
+	//res.render('components/profilpage.ejs', {adresses: resultat})
 })
