@@ -19,9 +19,9 @@ if (typeof cle !== 'undefined'  && cle)
  <th><a href='/trier/prenom/<%= objOrdre.prenom  %>'>Prenom</a></th>
  <th><a href='/trier/courriel/<%= objOrdre.courriel  %>'>Telephone</a></th>
  <th><a href='/trier/telephone/<%= objOrdre.telephone  %>'>Courriel</a></th>
- <th>Supprimer</th> 
- <th>Sauvegarder</th>
- <th>Proril</th> 
+ <th></th> 
+ <th></th>
+ <th></th> 
  </tr>
  <% adresses.forEach(elm => {%>
  <tr>
@@ -31,8 +31,8 @@ if (typeof cle !== 'undefined'  && cle)
  <td contenteditable='true'><%= elm.telephone %></td>
  <td contenteditable='true'><%= elm.courriel %></td>
  <td><a href="/detruire/<%= elm._id %>"><i class="material-icons">close</i></a></td>
- <td><a class='sauver' href="#">Sauver</a></td>
- <td><a href="/afficherUtilisateur/<%= elm._id %>">Profil</a></td>
+ <td><a class='sauver' href="#"><i class="material-icons">save</i></a></td>
+ <td><a href="/afficherUtilisateur/<%= elm._id %>"><i class="material-icons">person</i></a></td>
  </tr>
  <% }) %>
  </table>

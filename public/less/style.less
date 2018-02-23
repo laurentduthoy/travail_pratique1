@@ -82,15 +82,18 @@ body{
 	}
 
 	table{
+		width: 100vw;
 		overflow-x: scroll;
 		tbody{
-			
+			width: 100vw;
+			overflow-x: scroll;
 			tr{
 				&:first-child{
 					color:white;
 					background-color: @couleurFoncer;
 
 					th{
+						background-color: @couleurFoncer;
 						a{
 							color: white;
 							text-decoration: none;
@@ -104,10 +107,24 @@ body{
 				
 				td{
 					padding: 0.5em;
+					text-align: center;
+
+					&:nth-child(6){
+						background-color: red;
+						i{
+							color:white;
+						}
+					}
+					&:nth-child(8){
+						background-color: @couleurSecondaire;
+						i{
+							color:white;
+						}
+					}
 				}
 
 				td,th{	
-					&:first-child,&:nth-child(4),&:nth-child(7){
+					&:first-child,&:nth-child(4),&:nth-child(7),&:nth-child(5){
 						display: none;
 					}
 				}
