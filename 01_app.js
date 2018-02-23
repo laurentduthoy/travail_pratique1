@@ -89,7 +89,7 @@ let ordre = (req.params.ordre == 'asc' ? 1 : -1)
 let cursor = db.collection('adresse').find().sort(cle,ordre).toArray(function(err, resultat){
 ordre == 1 ? 'asc' : 'desc';
 
-console.log(req.params.ordre);
+//console.log(req.params.ordre);
 ordre = (req.params.ordre == 'asc' ? 'desc' : 'asc')
  res.render('components/adresse.ejs', {adresses: resultat, cle, ordre })
 })
@@ -111,10 +111,24 @@ app.get('/peupler', (req, res) => {
 	res.redirect('/list');
 })
 
-///vide la bdd
+// =================vide la bdd
 app.get('/vider', (req, res) => {
 	db.collection('adresse').remove({}, (err, resultat) => {
 		if (err) return console.log(err)
 		res.redirect('/list')  // redirige vers la route qui affiche la collection
 	})
+})
+
+// =============== recherche
+app.post('/recherche', (req, res) => {
+  		db.collection("adresse").find({ $or:[
+  			{'prenom' : { '$regex' : req.body.elemRecherche, '$options' : 'i' }}, 
+  			{'nom' : { '$regex' : req.body.elemRecherche, '$options' : 'i' }},
+  			{'courriel' : { '$regex' : req.body.elemRecherche, '$options' : 'i' }},
+  			{'telephone' : { '$regex' : req.body.elemRecherche, '$options' : 'i' }},
+  		]}).toArray(function(err, resultat) {
+   		 if (err) throw err;
+    		console.log(resultat);
+    	 res.render('components/adresse.ejs', {adresses: resultat})
+  });
 })

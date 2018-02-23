@@ -32,7 +32,6 @@ const peupler_Json = () => {
 		ntelephone4 = "";
 		tabNumero = ["0","1","2","3","4","5","6","7","8","9"];
 
-		console.log();
 		//prénom
 		position = Math.floor(Math.random()*tabPrenom.length);
 		prenom = tabPrenom[position];
@@ -80,7 +79,7 @@ const peupler_Json = () => {
 			'prenom':prenom,
 			'nom':nom,
 			'telephone':"("+telephone+")"+"-"+ntelephone3+"-"+ntelephone4,
-			'courriel':prenom+courrielSepatation+nom+courriel+courrielExt
+			'courriel':(prenom+courrielSepatation+nom+courriel+courrielExt).toLowerCase().replace(/\s+/g, '').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 		}
 
 		tabPersonnes[i] = tabUnePersonne;
