@@ -259,8 +259,13 @@ footer{
 		width: 100vw;
 		tbody{
 			tr{
-				&:first-child{
 
+				&:hover{
+					background-color: @couleurSecondaire;
+					color:white;
+				}
+
+				&:first-child{
 					th{
 					
 					// flex-direction:row;
@@ -272,6 +277,10 @@ footer{
 
 				&:nth-child(even){
 					background-color: white;
+						&:hover{
+						background-color: @couleurSecondaire;
+						color:white;
+					}
 				}
 				
 				td{
