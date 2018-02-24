@@ -179,6 +179,26 @@ footer{
 	body{
 		background-color: @couleurPale;
 		overflow-x: hidden;
+	
+	nav{
+		display: flex;
+
+		a{
+			color:white;
+			text-decoration: none;
+			padding-left: 1em;
+
+			&:hover{
+				color: @couleurSecondaire;
+			}
+
+			i{
+				width: 1em;
+				height: 1em;
+			}
+		}
+	}
+
 
 	.mon_formulaire {
 		float: left;
@@ -307,8 +327,10 @@ footer{
 		height: 100%;
 		width: 100%;
 		flex-direction:row;
-	justify-content:center;
-	alings-items:center;
+		justify-content:center;
+		alings-items:center;
+
+
 		li{
 			
 			padding-top: 0.2em;
