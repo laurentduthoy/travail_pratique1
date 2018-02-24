@@ -16,12 +16,20 @@ body{
 		height: 20vh;
 		background-color: @couleurPrincipal;
 		border-top: 1em solid @couleurFoncer;
+		padding-bottom: 1em;
 
 	nav{
+		display: flex;
+
 		a{
 			color:white;
 			text-decoration: none;
 			padding-left: 1em;
+
+			i{
+				width: 1em;
+				height: 1em;
+			}
 		}
 	}
 
@@ -68,32 +76,38 @@ body{
 		height: 2em;
 
 		input{
-			width: 60%;
+			width: 90%;
+		}
 
-			&:last-child{
-				width: 40%;
+		label{	
+				display: flex;
+				justify-content:center;
+				align-items:center;
+				width: 10%;
 				color:white;
 				border: none;
 				font-weight: bold;
 				text-transform: uppercase;
-				background-color: @couleurSecondaire;
+				background-color: @couleurPale;
+
+				input{
+					display: none;
+				}
 			}
-		}
 	}
 
 	table{
 		width: 100vw;
-		overflow-x: scroll;
 		tbody{
-			width: 100vw;
-			overflow-x: scroll;
 			tr{
 				&:first-child{
 					color:white;
 					background-color: @couleurFoncer;
+					
 
 					th{
 						background-color: @couleurFoncer;
+						padding: 0.4em;
 						a{
 							color: white;
 							text-decoration: none;
