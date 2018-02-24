@@ -39,10 +39,11 @@ app.get('/list', function (req, res) {
 // ====================== POUR AJOUTER
 app.post('/ajouter', (req, res) => {
 	console.log('req.body' + req.body)
+	let oModif;
 	 if (req.body['_id'] != '')
 	 { 
 		console.log('sauvegarde') 
-		let oModif = {
+		oModif = {
 			"_id": ObjectID(req.body['_id']), 
 			nom: req.body.nom,
 			prenom:req.body.prenom, 
@@ -54,14 +55,14 @@ app.post('/ajouter', (req, res) => {
 	 }
 	 else
 	 {
-	 console.log('insert')
-	 console.log(req.body)
-	 let oModif = {
-	 nom: req.body.nom,
-	 prenom:req.body.prenom, 
-	 telephone:req.body.telephone,
-	courriel:req.body.courriel
-	 }
+		 console.log('insert')
+		 console.log(req.body)
+		 oModif = {
+		 nom: req.body.nom,
+		 prenom:req.body.prenom, 
+		 telephone:req.body.telephone,
+		 courriel:req.body.courriel
+	 	}
 	 }
 	 db.collection('adresse').save(oModif, (err, result) => {
 	 if (err) return console.log(err)
@@ -119,6 +120,7 @@ app.get('/vider', (req, res) => {
 
 // =============== recherche
 app.post('/recherche', (req, res) => {
+	console.log("ca vient icitte calisse");
   		db.collection("adresse").find({ $or:[
   			{'prenom' : { '$regex' : req.body.elemRecherche, '$options' : 'i' }}, 
   			{'nom' : { '$regex' : req.body.elemRecherche, '$options' : 'i' }},
