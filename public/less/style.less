@@ -242,7 +242,8 @@ footer{
 				&:first-child{
 
 					th{
-						//padding: 0.4em;
+					
+					// flex-direction:row;
 						a{
 
 						}
@@ -282,6 +283,7 @@ footer{
 				} 
 
 				td,th{	
+
 					&:first-child{
 						display: none;
 					}
@@ -293,7 +295,28 @@ footer{
 			}
 		}
 	}
+	
+	footer{
+	flex-direction:row;
+	justify-content:center;
+	alings-items:center;
+	padding-left: 1em;
+	
+	ul{
+		color:@couleurPale;
+		height: 100%;
+		width: 100%;
+		li{
+			
+			padding-top: 0.2em;
 
+			a{
+				color:@couleurPale;
+				text-decoration: none;
+			}
+		}
+	}
+}
 
 
 	}
