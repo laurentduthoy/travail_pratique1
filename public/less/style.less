@@ -8,10 +8,19 @@ body{
 	font-family: 'Roboto', sans-serif;
 
 	header{
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		flex-direction:column;
-		justify-content:center;
-		align-items:center;
+		-webkit-box-orient:vertical;
+		-webkit-box-direction:normal;
+		    -ms-flex-direction:column;
+		        flex-direction:column;
+		-webkit-box-pack:center;
+		    -ms-flex-pack:center;
+		        justify-content:center;
+		-webkit-box-align:center;
+		    -ms-flex-align:center;
+		        align-items:center;
 		width: 100vw;
 		height: 20vh;
 		background-color: @couleurPrincipal;
@@ -19,6 +28,8 @@ body{
 		padding-bottom: 1em;
 
 	nav{
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 
 		a{
@@ -34,10 +45,19 @@ body{
 	}
 
 	section{
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		flex-direction:column;
-		justify-content:center;
-		align-items:center;
+		-webkit-box-orient:vertical;
+		-webkit-box-direction:normal;
+		    -ms-flex-direction:column;
+		        flex-direction:column;
+		-webkit-box-pack:center;
+		    -ms-flex-pack:center;
+		        justify-content:center;
+		-webkit-box-align:center;
+		    -ms-flex-align:center;
+		        align-items:center;
 	
 		i{
 			color:white;
@@ -51,8 +71,13 @@ body{
 
 	.mon_formulaire {
 		background-color: @couleurPale;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		flex-direction:column;
+		-webkit-box-orient:vertical;
+		-webkit-box-direction:normal;
+		    -ms-flex-direction:column;
+		        flex-direction:column;
 
 		input{
 			
@@ -70,6 +95,8 @@ body{
 	}
 	
 	.formulaire_recherche{
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 		border-top: 2px solid @couleurFoncer;
 		border-bottom: 2px solid @couleurFoncer;
@@ -80,9 +107,15 @@ body{
 		}
 
 		label{	
+				display: -webkit-box;	
+				display: -ms-flexbox;	
 				display: flex;
-				justify-content:center;
-				align-items:center;
+				-webkit-box-pack:center;
+				    -ms-flex-pack:center;
+				        justify-content:center;
+				-webkit-box-align:center;
+				    -ms-flex-align:center;
+				        align-items:center;
 				width: 10%;
 				color:white;
 				border: none;
@@ -150,10 +183,19 @@ body{
 
 footer{
 	background-color: @couleurFoncer;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction:column;
-	justify-content:center;
-	align-items:center;
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:normal;
+	    -ms-flex-direction:column;
+	        flex-direction:column;
+	-webkit-box-pack:center;
+	    -ms-flex-pack:center;
+	        justify-content:center;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
 	height: 30vh;
 	padding-top: 1em;
 
@@ -176,10 +218,19 @@ footer{
 }
 
 div{
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction:column;
-	justify-content:center;
-	align-items:center;
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:normal;
+	    -ms-flex-direction:column;
+	        flex-direction:column;
+	-webkit-box-pack:center;
+	    -ms-flex-pack:center;
+	        justify-content:center;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
 	padding: 3em;
 	background-color: white;
 
@@ -209,6 +260,8 @@ div{
 		overflow-x: hidden;
 	
 	nav{
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 
 		a{
@@ -230,9 +283,16 @@ div{
 
 	.mon_formulaire {
 		float: left;
-		flex-direction:row;
-		justify-content:center;
-		align-items:center;
+		-webkit-box-orient:horizontal;
+		-webkit-box-direction:normal;
+		    -ms-flex-direction:row;
+		        flex-direction:row;
+		-webkit-box-pack:center;
+		    -ms-flex-pack:center;
+		        justify-content:center;
+		-webkit-box-align:center;
+		    -ms-flex-align:center;
+		        align-items:center;
 		padding: 1em;
 
 		input{
@@ -255,6 +315,8 @@ div{
 		border: none;
 		widows: 100%;
 		height: 100%;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 		float: right;
 		height: 2em; 
@@ -267,9 +329,15 @@ div{
 		}
 
 		label{	
+				display: -webkit-box;	
+				display: -ms-flexbox;	
 				display: flex;
-				justify-content:center;
-				align-items:center;
+				-webkit-box-pack:center;
+				    -ms-flex-pack:center;
+				        justify-content:center;
+				-webkit-box-align:center;
+				    -ms-flex-align:center;
+				        align-items:center;
 				width: 20%;
 				color:white;
 				border: none;
@@ -296,7 +364,7 @@ div{
 				&:first-child{
 					th{
 					
-					// flex-direction:row;
+					/* flex-direction:row;*/
 						a{
 
 						}
@@ -312,8 +380,8 @@ div{
 				}
 				
 				td{
-					//padding: 0.5em;
-					//text-align: center;
+					/*padding: 0.5em;*/
+					/*text-align: center;*/
 
 					&:nth-child(6){
 						background-color: red;
@@ -332,9 +400,9 @@ div{
 					}
 
 					&:nth-child(8){
-						//background-color: @couleurSecondaire;
+						/*background-color: @couleurSecondaire;*/
 						i{
-							//color:white;
+							/*color:white;*/
 						}
 					}
 				} 
@@ -354,8 +422,13 @@ div{
 	}
 	
 	footer{
-	flex-direction:row;
-	justify-content:center;
+	-webkit-box-orient:horizontal;
+	-webkit-box-direction:normal;
+	    -ms-flex-direction:row;
+	        flex-direction:row;
+	-webkit-box-pack:center;
+	    -ms-flex-pack:center;
+	        justify-content:center;
 	alings-items:center;
 	padding-left: 1em;
 	
@@ -363,8 +436,13 @@ div{
 		color:@couleurPale;
 		height: 100%;
 		width: 100%;
-		flex-direction:row;
-		justify-content:center;
+		-webkit-box-orient:horizontal;
+		-webkit-box-direction:normal;
+		    -ms-flex-direction:row;
+		        flex-direction:row;
+		-webkit-box-pack:center;
+		    -ms-flex-pack:center;
+		        justify-content:center;
 		alings-items:center;
 
 
