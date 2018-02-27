@@ -98,14 +98,13 @@ app.get('/trier/:cle/:ordre', (req, res) => {
 // ============ PEUPLER
 app.get('/peupler', (req, res) => {
 
-	let resultat = peupler_Json() 
+	let resultat = peupler_Json() ;
 
 	//console.log("resultat = " + util.inspect(resultat));
 
 		db.collection('adresse').insertMany(resultat, (err, result) => {
 			if (err) return console.log(err) 
 		})
-
 
 	res.redirect('/list');
 })
@@ -120,7 +119,7 @@ app.get('/vider', (req, res) => {
 
 // =============== recherche
 app.post('/recherche', (req, res) => {
-	console.log("ca vient icitte calisse");
+	
   		db.collection("adresse").find({ $or:[
   			{'prenom' : { '$regex' : req.body.elemRecherche, '$options' : 'i' }}, 
   			{'nom' : { '$regex' : req.body.elemRecherche, '$options' : 'i' }},
@@ -132,7 +131,7 @@ app.post('/recherche', (req, res) => {
     		console.log(resultat);
     	 res.render('components/adresse.ejs', {adresses: resultat})
   });
-})
+}) 
 
 // ================= afficher un utilisateur
 app.get('/afficherUtilisateur/:id', (req, res) => {
